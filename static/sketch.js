@@ -109,7 +109,7 @@ function setup() {
   
   mobileFlag = mobileCheck();
   if(mobileFlag){
-    createCanvas(displayWidth, displayHeight).parent('canvasHolder');;
+    createCanvas(displayWidth, displayHeight).parent('canvasHolder');
     displayOption = {
         video: {
           facingMode: {
@@ -119,7 +119,7 @@ function setup() {
       };
     video = createCapture(displayOption);
     video.hide();
-    poseNet = ml5.poseNet(video, poseNetOption_M, modelLoaded);
+    poseNet = ml5.poseNet(video, poseNetOption_M, modelLoaded).parent('canvasHolder');
     poseNet.on('pose', getPoses);
   }else{
     createCanvas(displayWidth, displayHeight);
